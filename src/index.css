@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-linkedin-blue: #0A66C2;
+  --color-linkedin-blue-hover: #004182;
+  --color-linkedin-blue-light: #378FE9;
+  --color-linkedin-bg: #F3F2EF;
+  --color-linkedin-text-primary: #1F2328;
+  --color-linkedin-text-secondary: #5F6B7A;
+  --color-linkedin-border: #E0E0E0;
+  --color-linkedin-success: #057642;
+  --color-linkedin-warning: #B24020;
+  
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  --shadow-card: 0 0 0 1px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@layer base {
+  body {
+    @apply bg-linkedin-bg text-linkedin-text-primary antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-linkedin-blue text-white px-4 py-1.5 rounded-full font-semibold transition-colors hover:bg-linkedin-blue-hover disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-linkedin-text-secondary border border-linkedin-text-secondary px-4 py-1.5 rounded-full font-semibold transition-colors hover:bg-gray-100 hover:border-linkedin-text-primary hover:text-linkedin-text-primary hover:shadow-[inset_0_0_0_1px_rgba(0,0,0,0.6)];
+  }
+
+  .input-field {
+    @apply w-full p-2 border border-black/30 rounded focus:border-linkedin-blue focus:ring-1 focus:ring-linkedin-blue outline-none transition-all hover:bg-gray-50;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-card border border-transparent;
+  }
+}
